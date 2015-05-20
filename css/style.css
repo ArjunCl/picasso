@@ -1,0 +1,173 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+body {
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+	text-align: center;
+	color: #333;
+	padding: 110px 0 0 0;
+	transition: background-color 0.5s ease-in;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: #fff;
+	padding: 20px 0;
+	/*this dictates where the element sits in the s axis of the page. negative will go to the back and positive will go to
+	the front. the regular is 0.*/
+	z-index: 10;
+}
+
+nav a{
+	color: #333;
+	font-weight: 700;
+	text-decoration: none;
+	letter-spacing: 1px;
+	padding: 0 10px 0 10px;
+	text-transform: uppercase;
+	transition: color 250ms ease;
+}
+
+nav a:hover {
+	color: #5aa2ba
+}
+
+.container {
+	padding-top: 100px;
+}
+
+hr {
+	width: 100px;
+	margin-bottom: 50px;
+	border: none;
+	border-bottom: solid #000 1px;
+}
+
+h2 {
+	font-style: 24px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	margin-bottom: 20px;
+}
+
+.date {
+	letter-spacing: 2px;
+	color: #b7bbbb;
+}
+
+p{
+	margin: 25px 0 50px;
+}
+
+blockquote {
+	font-size: 25px;
+	font-weight: 300;
+}
+
+.top-image {
+	margin-bottom: 10px;
+}
+
+.columns {
+	position: relative;
+}
+
+.caption {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	background: #fff;
+	padding: 5px 10px;
+}
+
+footer img {
+	border-radius: 50%;
+}
+
+section img {
+	transition: all 250ms ease;
+	cursor: pointer;
+}
+
+section img:hover {
+	transform: translatey(-5px);
+	box-shadow: 0 5px 3px 0 rgba(0,0,0,0.5)
+}
+
+.lightbox {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/*needs to be higher than the header*/
+	z-index: 20;
+	background: rgba(255,255,255,0.7);
+	display:none;
+}
+
+.lightbox img{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	/*when we use the transform translate thing, we don't need to do the manual work to try and figure it out*/
+	transform: translate(-50%, -50%);
+	max-width: 90%;
+}
+
+.distance-counter {
+	position: fixed;
+	top: 0;
+	right: 0;
+	background-color: #fff;
+	padding: 5px 10px;
+	font-weight: bold;
+	z-index: 30;
+}
+
+.blue {
+	background-color: rgba(58, 110, 165, 0.15)
+}
+
+.rose {
+	background-color: rgba(166, 56, 30, 0.15)
+}
+
+.cubism {
+	background-color: rgba(85, 79, 164, 0.15)
+}
+
+/*we declare our animation on a timeline that goes from 0-100%*/
+/*we do this separately from the element we include it on*/
+@-webkit-keyframes animation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+header {
+	/*here we include our animation onto our element*/
+	-webkit-animation: animation 5s;
+}
+
+@-webkit-keyframes sectionSlide {
+	0% {
+		transform: translatey(-500px) scale(0.5);
+		opacity: 0;
+	}
+	100% {
+		transform: translatey(0) scale(1);
+		opacity: 1;
+	}
+}
+
+#blue {
+	-webkit-animation: sectionSlide 2s;
+}
+
